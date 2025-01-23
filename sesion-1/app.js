@@ -16,6 +16,8 @@ function otra() {
     console.log("otra")
 }
 
+saludo()
+
 // Muestra el mensaje según la ocasión
 function mostrarMensaje(isSaludo, mensaje) {
     if (isSaludo) {
@@ -27,7 +29,8 @@ function mostrarMensaje(isSaludo, mensaje) {
 }
 
 // Saludo
-mostrarMensaje(false, "Javascript I")
+console.log(mostrarMensaje(true, "Javascript I"))
+console.log(mostrarMensaje(false, "Javascript I"))
 
 
 // Comentario en una línea
