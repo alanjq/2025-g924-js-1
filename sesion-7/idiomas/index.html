@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programación con Javascript</title>
+</head>
+
+<body onload="detectarIdioma()">
+    <header>Encabezado del sitio principal</header>
+    <label id="idiomaDetectado"></label>
+    <a href="./en/home.html">English</a>
+    <a href="./es/home.html">Español</a>
+
+    <h2>Selectores</h2>
+    <ul class="ejemplos">
+        <li><b>#</b> ID<br/>
+            <code>
+                document.querySelector("#idiomaDetectado")
+            </code>
+        </li>
+        <li><b>.</b> Class / ClassName<br/>
+            <code>
+                document.querySelector('.ejemplos')
+            </code>
+        </li>
+        <li><b>div</b> Tag / TagName<br/>
+            <code>
+                document.querySelector("label")
+            </code></li>
+        <li><b>[prop]</b> Propiedad<br/>
+            <code>
+                document.querySelector('[href]')
+            </code>
+        </li>
+    </ul>
+
+    <script src="tema-7.js"></script>
+
+    <script>
+        function detectarIdioma() {
+            // es-419
+            let idioma = navigator.language.slice(0, 2)
+            let label = document.getElementById("idiomaDetectado")
+            console.log('Idioma detectado:', idioma);
+
+            if (idioma === "es") {
+                label.innerText = "Se recomienda español"
+                // location.href = "http://127.0.0.1:5500/sesion-7/es/home.html"
+            } else {
+                label.innerText = "Se recomienda inglés"
+                // location.href = "http://127.0.0.1:5500/sesion-7/en/home.html"
+            }
+        }
+    </script>
+</body>
+
+</html>

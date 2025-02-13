@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <ol>
+        <li>uno</li>
+        <li>dos</li>
+        <li>tres</li>
+        <li>cuatro</li>
+        <li>cinco</li>
+        <li>seis</li>
+    </ol>
+    <div id="aqui">aqui</div>
+    
+    <script>
+        // Asignar una función al evento onload de la ventana/pestaña
+        window.onload = function(){
+            // Crear elementos HTML
+            var cabecera = document.createElement("h1")
+            var cabecera2 = document.createElement("h2")
+            var textoCabecera = document.createTextNode("Hola mundo")
+            var textoCabecera2 = document.createTextNode("Hola mundo 2")
+            // Agregar el nodo de texto al elemento cabecera
+            // Resultado: <h1>Hola mundo</h1>
+            cabecera.appendChild(textoCabecera)
+            cabecera.setAttribute('origen', 'código')
+            // Adjuntar el elemento cabecera al cuerpo del documento HTML
+            // document.body.appendChild(cabecera)
+            // document.appendChild(cabecera)
+            document.body.prepend(cabecera)
+            document.body.prepend(cabecera2)
+
+            cabecera2.appendChild(textoCabecera)
+            let aquiDiv =  document.querySelector("#aqui")
+            document.body.insertBefore(cabecera, cabecera2)
+        }
+    </script>
+</body>
+</html>
